@@ -53,9 +53,9 @@ def restart():
 l, c, r = st.columns([5,10,2])
 with c:
     if st.get_option('theme.base') == 'dark':
-        st.image('media/swizzle_logo_dark.png', width=450)
+        st.image('app/media/swizzle_logo_dark.png', width=450)
     else:
-        st.image('media/swizzle_logo_light.png', width=450)
+        st.image('app/media/swizzle_logo_light.png', width=450)
 
 st.markdown("---")
 
@@ -113,7 +113,7 @@ if st.session_state.page == 0:
                         st.session_state['X'] = X
 
                         #----------- Loading the model -----------
-                        swizzle_model = keras.models.load_model("../app/model/swizzle_model", compile=False)
+                        swizzle_model = keras.models.load_model("app/model/swizzle_model", compile=False)
                         y_pred = swizzle_model.predict(st.session_state['X'])
                         st.session_state['y_pred'] = y_pred
 
